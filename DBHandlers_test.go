@@ -20,15 +20,15 @@ func TestExecuteQuery(t *testing.T) {
 		Name string
 	}
 
-	query := "SELECT id, name FROM dummy WHERE id = ?"
+	query := "SELECT id, name FROM dummy WHERE name LIKE '%Doe%'"
 	rows := sqlmock.NewRows([]string{"id", "name"}).
 		AddRow(1, "John Doe").
 		AddRow(2, "Jane Doe")
 
-	mock.ExpectPrepare(regexp.QuoteMeta(query)).ExpectQuery().WithArgs(1).WillReturnRows(rows)
+	mock.ExpectPrepare(regexp.QuoteMeta(query)).ExpectQuery().WillReturnRows(rows)
 
 	var dummyPrototype Dummy
-	results, err := ExecuteQuery(query, []interface{}{1}, db, dummyPrototype)
+	results, err := ExecuteQuery(query, nil, db, dummyPrototype)
 	if err != nil {
 		t.Errorf("error was not expected while executing query: %s", err)
 	}
