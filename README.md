@@ -2,7 +2,7 @@
 
 The `DBHandlers` package provides a set of utilities to facilitate executing SQL queries and scanning results into structs. It uses Go's generic features to provide a flexible and type-safe way to work with database rows.
 
-## Features
+## Functions
 
 - **ExecuteQuery**: Execute SQL queries with parameters and scan the results into slices of a specified struct type.
 
