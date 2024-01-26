@@ -13,7 +13,13 @@ The `DBHandlers` package provides a set of utilities to facilitate executing SQL
 
 ## Installation
 
-Run the following command in your project directory:
+Run this command in your project directory:
 
 ```sh
 go get github.com/ChrisBolis99/DBHandlers
+```
+
+Remember to then import it in your .go file
+
+```go
+import "github.com/ChrisBolis99/DBHandlers"
