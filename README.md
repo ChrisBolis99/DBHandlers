@@ -8,7 +8,7 @@ The `DBHandlers` package provides a set of utilities to facilitate executing SQL
 
 ## Prerequisites
 
-- Go 1.18 or higher (due to the use of generics).
+- Go 1.18 or higher
 - An SQL database driver compatible with Go's `database/sql` package (e.g., MySQL, PostgreSQL).
 
 ## Installation
