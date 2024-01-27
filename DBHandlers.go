@@ -2,6 +2,7 @@ package DBHandlers
 
 import (
 	"database/sql"
+	"fmt"
 	"reflect"
 )
 
@@ -54,6 +55,9 @@ func ExecuteQuery[T any](queryToCall string, params []interface{}, db *sql.DB, p
 func scanMultipleRows[T any](rows *sql.Rows, prototype T) ([]T, error) {
 	var results []T
 	structType := reflect.TypeOf(prototype)
+	if structType.Kind() != reflect.Struct {
+		return nil, fmt.Errorf("prototype must be a struct")
+	}
 
 	for rows.Next() {
 		structValue := reflect.New(structType).Elem()
