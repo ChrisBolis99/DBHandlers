@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"reflect"
+
+	_ "github.com/ChrisBolis99/DBHandlers/DBMLParser" // TODO-REMOVE BLANK IMPORT WHEN ACTUALLY USING IT
 )
 
 // ExecuteQuery executes a SQL query with the provided parameters and scans the resulting rows into a slice of the specified prototype type.
