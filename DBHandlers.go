@@ -1,3 +1,11 @@
+// Package DBHandlers provides a set of utilities for interacting with SQL databases in Go applications.
+// It abstracts common tasks involved in executing queries and scanning results into Go data structures,
+// simplifying the process of data retrieval and manipulation.
+//
+// Note: This package assumes that the caller is responsible for managing database connections, including opening
+// and closing connections as needed.
+//
+// This package makes use of Go's generics, available in Go 1.18 and later
 package DBHandlers
 
 import (
